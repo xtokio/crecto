@@ -36,6 +36,14 @@ changeset = Repo.delete(updated_user)
 
 ## Full Example
 ```crystal
+# shard.yml
+dependencies:
+  crecto:    
+    github: xtokio/crecto
+  sqlite3:
+    github: crystal-lang/crystal-sqlite3
+
+# src
 require "sqlite3"
 require "crecto"
 
@@ -76,8 +84,8 @@ usuarios.each do |record|
     puts record.nombre
 end
 
-  # Convert to JSON
-  puts usuarios.to_json
+# Convert to JSON
+puts usuarios.to_json
 ```
 
 ## Usage and Guides
