@@ -34,6 +34,52 @@ updated_user = changeset.instance
 changeset = Repo.delete(updated_user)
 ```
 
+## Full Example
+```crystal
+require "sqlite3"
+require "crecto"
+
+module ConnDB
+  extend Crecto::Repo
+
+  config do |conf|
+      conf.adapter = Crecto::Adapters::SQLite3
+      conf.database = "/Users/luis/Desktop/Code/Crystal/apps/orm/src/db/simplecrm.db"
+  end
+end
+
+class Usuario < Crecto::Model
+  set_created_at_field nil
+  set_updated_at_field nil
+
+  schema "usuarios" do # table name
+      field :iUsuario, Int32, primary_key: true
+      field :usuario, String
+      field :password, String
+      field :nombre, String
+      field :foto, String
+      field :extension, Int32
+      field :email, String
+      field :tipo, String
+      field :activo, Int32
+  end
+
+  validate_required [:usuario, :password]
+end
+
+usuarios = ConnDB.all(Usuario,Query.where(iUsuario: 1))
+
+# Iterate records
+usuarios.each do |record|
+    puts record.iUsuario
+    puts record.usuario
+    puts record.nombre
+end
+
+  # Convert to JSON
+  puts usuarios.to_json
+```
+
 ## Usage and Guides
 
 Visit [www.crecto.com](https://www.crecto.com)
