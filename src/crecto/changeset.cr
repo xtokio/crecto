@@ -67,9 +67,9 @@ module Crecto
     end
 
     # Validate the inclusion of *field* value is in *in*
-    def validate_inclusion(field : Symbol, in : Array)
-      REQUIRED_ARRAY_INCLUSIONS[self.to_s] = [] of {field: Symbol, in: ArrayOfAny} unless REQUIRED_ARRAY_INCLUSIONS.has_key?(self.to_s)
-      REQUIRED_ARRAY_INCLUSIONS[self.to_s].push({field: field, in: in})
+    def validate_inclusion(field : Symbol, in_param : Array)
+      REQUIRED_ARRAY_INCLUSIONS[self.to_s] = [] of {field: Symbol, in_param: ArrayOfAny} unless REQUIRED_ARRAY_INCLUSIONS.has_key?(self.to_s)
+      REQUIRED_ARRAY_INCLUSIONS[self.to_s].push({field: field, in_param: in_param})
     end
 
     # Validate the inclusion of *field* value is in *in*
