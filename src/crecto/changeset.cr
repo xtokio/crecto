@@ -73,31 +73,31 @@ module Crecto
     end
 
     # Validate the inclusion of *field* value is in *in*
-    def validate_inclusion(field : Symbol, in : RangeTypes)
-      REQUIRED_RANGE_INCLUSIONS[self.to_s] = [] of {field: Symbol, in: RangeTypes} unless REQUIRED_RANGE_INCLUSIONS.has_key?(self.to_s)
-      REQUIRED_RANGE_INCLUSIONS[self.to_s].push({field: field, in: in})
+    def validate_inclusion(field : Symbol, in_param : RangeTypes)
+      REQUIRED_RANGE_INCLUSIONS[self.to_s] = [] of {field: Symbol, in_param: RangeTypes} unless REQUIRED_RANGE_INCLUSIONS.has_key?(self.to_s)
+      REQUIRED_RANGE_INCLUSIONS[self.to_s].push({field: field, in_param: in_param})
     end
 
     # Validate the inclusion of *fields* values is in *in*
-    def validate_inclusion(fields : Array(Symbol), in : Array | Range)
-      fields.each { |field| validate_inclusion(field, in) }
+    def validate_inclusion(fields : Array(Symbol), in_param : Array | Range)
+      fields.each { |field| validate_inclusion(field, in_param) }
     end
 
     # Validate the inclusion of *field* value is not in *in*
-    def validate_exclusion(field : Symbol, in : Array)
-      REQUIRED_ARRAY_EXCLUSIONS[self.to_s] = [] of {field: Symbol, in: ArrayOfAny} unless REQUIRED_ARRAY_EXCLUSIONS.has_key?(self.to_s)
-      REQUIRED_ARRAY_EXCLUSIONS[self.to_s].push({field: field, in: in})
+    def validate_exclusion(field : Symbol, in_param : Array)
+      REQUIRED_ARRAY_EXCLUSIONS[self.to_s] = [] of {field: Symbol, in_param: ArrayOfAny} unless REQUIRED_ARRAY_EXCLUSIONS.has_key?(self.to_s)
+      REQUIRED_ARRAY_EXCLUSIONS[self.to_s].push({field: field, in_param: in_param})
     end
 
     # Validate the inclusion of *field* value is not in *in*
-    def validate_exclusion(field : Symbol, in : RangeTypes)
-      REQUIRED_RANGE_EXCLUSIONS[self.to_s] = [] of {field: Symbol, in: RangeTypes} unless REQUIRED_RANGE_EXCLUSIONS.has_key?(self.to_s)
-      REQUIRED_RANGE_EXCLUSIONS[self.to_s].push({field: field, in: in})
+    def validate_exclusion(field : Symbol, in_param : RangeTypes)
+      REQUIRED_RANGE_EXCLUSIONS[self.to_s] = [] of {field: Symbol, in_param: RangeTypes} unless REQUIRED_RANGE_EXCLUSIONS.has_key?(self.to_s)
+      REQUIRED_RANGE_EXCLUSIONS[self.to_s].push({field: field, in_param: in_param})
     end
 
     # Validate the inclusion of *fields* values is not *in*
-    def validate_exclusion(fields : Array(Symbol), in : Array | Range)
-      fields.each { |field| validate_exclusion(field, in) }
+    def validate_exclusion(fields : Array(Symbol), in_param : Array | Range)
+      fields.each { |field| validate_exclusion(field, in_param) }
     end
 
     # Validate the length of *field* value using the following opts:
