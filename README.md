@@ -12,7 +12,7 @@ Robust database wrapper for Crystal. Inspired by [Ecto](https://github.com/elixi
 
 With built in query composer, associations, transactions, validations, constraints, and more.
 
-Website with guides and examples - [https://www.crecto.com/](https://www.crecto.com/)
+Website with guides and examples - [https://crecto.dev/](https://crecto.dev/)
 
 See api docs - <http://docs.crecto.com>
 
@@ -38,7 +38,7 @@ changeset = Repo.delete(updated_user)
 
 ## Usage and Guides
 
-Visit [www.crecto.com](https://www.crecto.com)
+Visit [https://crecto.dev/](https://crecto.dev/)
 
 #### Benchmarks
 
