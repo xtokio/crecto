@@ -14,7 +14,7 @@ With built in query composer, associations, transactions, validations, constrain
 
 Website with guides and examples - [https://crecto.dev/](https://crecto.dev/)
 
-See api docs - <http://docs.crecto.com>
+See api docs - <https://crecto.dev>
 
 ## Example
 
